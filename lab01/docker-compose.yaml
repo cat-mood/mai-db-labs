@@ -1,0 +1,12 @@
+version: "3.9"
+services:
+  postgres:
+    image: postgres:17.4
+    environment:
+      POSTGRES_DB: "lab01"
+      POSTGRES_USER: "cat_mood"
+      POSTGRES_PASSWORD: "dbdb"
+    volumes:
+      - .:/docker-entrypoint-initdb.d
+    ports:
+      - "5432:5432"
